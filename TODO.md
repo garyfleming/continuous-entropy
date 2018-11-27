@@ -13,3 +13,6 @@
 * Cloud infrastructure will change at some point, so we need to be able to move. Whether we do this by migration plans, hexagonal architecture (for minimal lock-in), or a multi-cloud solution, that's up for grabs.
 * People leaving or becoming knowledge silos is a very odd source of entropy. Can mitigate using staff liquidity matrixes.
 * Often forgotten dependencies that need managed: SSL Certs need renewed, support infrastructure (Jenkins, Artifactory, Docker registry etc) needs the same level of care as the project itself.
+* Hystrix being abandoned in favour of resilience4j. Still perfectly usable but bitrot will set in at some point. Won't embrace new ideas. Won't get better; calcified.
+* How do we check that our libraries have stopped being maintained? Maybe they're just in a good state. Think about the update policies around this. "Check for updates daily. Tell me when something hasn't been updated for more than X months etc"
+* Is there a correlation or connection between the entropy a library faces and the number of dependencies it has? The more numerous the dependencies, the more likely one is rotting.
