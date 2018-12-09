@@ -1,8 +1,10 @@
 # Continuous Entropy
 
-No proper abstract yet, but the general idea is that I want to talk about all the little things teams need to keep on top of to fight the entropy their systems are facing; and how advanced CI/CD practices might help.
+Our software lives in an entropic state. The world changes around it: new bugs appear, new versions, new operating systems, new hardware. Our systems must change or face eventual demise.
 
-Our software lives in an entropic state. The world changes around it, with new idioms and new bugs
+We often adopt approaches to continuously deploy our systems, but what if we had tools that let us continuously upgrade them too; pushing the entropy back a little bit each day.
+
+We'll talk about CI/CD, and some advanced practices we can use to keep our systems continually fresh, continually rejuvenated.
 
 
 # History
