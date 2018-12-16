@@ -20,4 +20,5 @@
 * For the malicious update of Open Source libraries, from new maintainers, perhaps one mechanism for this is a more nuanced approach to dependency updates. Regular updates by long-term maintainers? Take them. Not update in a while and new maintainer? Hold off a while.
 * For the malicious update of open source libraries, probably need to be doing vulnerability scanning anyway. Continuously.
 * Found issues. Libraries that had lots of big breaking changes (maybe pause or avoid), libraries that had basically stopped being supported, tech choices that had been abandoned.
+* chaos engineering for dashboards. CI jobs. Other infra
 * The fact the JDK support model has changed. The fact that Java the language is moving forward aggresively
