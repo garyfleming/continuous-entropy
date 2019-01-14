@@ -22,3 +22,5 @@
 * Found issues. Libraries that had lots of big breaking changes (maybe pause or avoid), libraries that had basically stopped being supported, tech choices that had been abandoned.
 * chaos engineering for dashboards. CI jobs. Other infra
 * The fact the JDK support model has changed. The fact that Java the language is moving forward aggresively
+* "Unless you do something proactively to improve it, you get more of what you've already got". I'd say it's worse than that: entropy through e.g. meme copying rather than understanding means it will get worse. https://twitter.com/joe_jag/status/1083047296789630977
+* consider the US government shutdown. Services that started failing due to lack of budget and/or automation. Example: ssl certs weren’t renewed in an automated manner and no-one could update
