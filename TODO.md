@@ -25,3 +25,4 @@
 * "Unless you do something proactively to improve it, you get more of what you've already got". I'd say it's worse than that: entropy through e.g. meme copying rather than understanding means it will get worse. https://twitter.com/joe_jag/status/1083047296789630977
 * consider the US government shutdown. Services that started failing due to lack of budget and/or automation. Example: ssl certs weren’t renewed in an automated manner and no-one could update
 * Atomist is an interesting tool for dealing with this kind of entropy
+* Python 2 to Python 3 is an interesting look at entropy. People reticent to move forward. Landscape fractured.
