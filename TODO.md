@@ -26,3 +26,4 @@
 * consider the US government shutdown. Services that started failing due to lack of budget and/or automation. Example: ssl certs weren’t renewed in an automated manner and no-one could update
 * Atomist is an interesting tool for dealing with this kind of entropy
 * Python 2 to Python 3 is an interesting look at entropy. People reticent to move forward. Landscape fractured.
+* Consider things like the legacy of Internet Explorer 6 through 9. Still out there in business of all sizes. Apps built for them doing crucial things have never been replaced. Weird economic factors. Momentum factors.

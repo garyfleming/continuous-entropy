@@ -6,7 +6,6 @@ We often adopt approaches to continuously deploy our systems, but what if we had
 
 We'll talk about CI/CD, and some advanced practices we can use to keep our systems continually fresh, continually rejuvenated.
 
-
-# History
+## History
 
 Nowhere yet. Haven't even submitted it anywhere.
