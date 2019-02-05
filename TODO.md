@@ -27,3 +27,4 @@
 * Atomist is an interesting tool for dealing with this kind of entropy
 * Python 2 to Python 3 is an interesting look at entropy. People reticent to move forward. Landscape fractured.
 * Consider things like the legacy of Internet Explorer 6 through 9. Still out there in business of all sizes. Apps built for them doing crucial things have never been replaced. Weird economic factors. Momentum factors.
+* Consider hamcrest. When Junit changed its dependency, hamcrest-core and hamcrest-library no longer made sense. https://exubero.com/2019/02/04/the-revivification-of-hamcrest/ 
