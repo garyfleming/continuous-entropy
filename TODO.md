@@ -29,3 +29,4 @@
 * Consider things like the legacy of Internet Explorer 6 through 9. Still out there in business of all sizes. Apps built for them doing crucial things have never been replaced. Weird economic factors. Momentum factors.
 * Consider hamcrest. When Junit changed its dependency, hamcrest-core and hamcrest-library no longer made sense. https://exubero.com/2019/02/04/the-revivification-of-hamcrest/
 * programmers as an outer shearing layer. Might suddenly find it hard to hire someone who knows your language (Python, say). What strategies do you deploy? Microservices (to aid rewrites), training etc
+* Trisha gee on code rot (recompiling and testing a project that hasn't change in years): https://twitter.com/trisha_gee/status/1098191234726850561
