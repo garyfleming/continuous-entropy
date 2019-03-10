@@ -26,6 +26,12 @@ If you've experienced you know the answer: it's a whole bunch of work to replatf
 
 Let's discuss a world in which we can write systems that, to a large degree, can look after themselves when we're not looking.
 
+### Learning Outcomes
+
+1. You'll learn more about continuous integration and continuous deployment if you aren't already doing them,
+2. You'll explore the reasons behind code rot and be given tools to help avoid those problems,
+3. You'll get to see that there are similar problems at other levels of development that we also need to focus on
+
 ## Organisational versions
 
 ### Constraint planning: using governing and enabling constraints to build orgs
