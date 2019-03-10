@@ -37,7 +37,7 @@ Entropy of the universe ONLY increases. Same of any closed system.
 # System Experiment: Fishes
 
 ^ Imagine a polystyrene box. Place in it a piece of fish. Pack it up with ice. What happens?
-^ It depends. Time
+^ It depends.
 
 ---
 
@@ -50,14 +50,18 @@ Entropy of the universe ONLY increases. Same of any closed system.
 
 ^ time is a key component of understanding entropy in systems. We might know (to some degree) the state of a system at some point, but over time it will change. Consider our fish box at these time scales. 10 minutes? Probably much the same. 10 hours? Ice will be melting but fish might be fine. 10 days? Fish will be rotten. 10000 years? The box will have started to breakdown.
 
+---
+
+# Software and Entropy
+
+^ TODO rename slide?
+^ So why have I been talking about entropy at all?
+^ You might think that you write your software and put it into production and it'll remain the same forever. That's sadly not true. Code rots. It's a fish in a box, and the ice is melting.
+^ What can we do to mitigate against the entropy?
 
 ---
 
----
 
-# Slide Title
-
-^ Presenter notes
 
 ---
 
