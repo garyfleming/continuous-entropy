@@ -18,6 +18,8 @@ It doesn't have to be like this.
 
 What if we used continuous integration and deployment techniques to ensure an easier future for ourselves and our future teams? Let's discuss a world in which we can write systems that, to a large degree, can look after themselves when we're not looking.
 
+In this session, we'll explore code rot, continuous deployment, and the tools (automated and otherwise) you can use to keep your code alive for a bit longer.
+
 ### 75-50 words
 
 What happens when you leave a codebase alone for a year? Would you expect it to still work? What about 5 years? 10 years?
