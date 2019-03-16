@@ -30,3 +30,4 @@
 * Consider hamcrest. When Junit changed its dependency, hamcrest-core and hamcrest-library no longer made sense. https://exubero.com/2019/02/04/the-revivification-of-hamcrest/
 * programmers as an outer shearing layer. Might suddenly find it hard to hire someone who knows your language (Python, say). What strategies do you deploy? Microservices (to aid rewrites), training etc
 * Trisha gee on code rot (recompiling and testing a project that hasn't change in years): https://twitter.com/trisha_gee/status/1098191234726850561
+* Dev machines: practice wiping them so they don't become a dependency
