@@ -110,21 +110,65 @@ will generally be augmented by using build pipelines that check software is work
 # Problem
 ## Dependency Updates
 
+^ Dependencies are a key part of code rot. If you don't update them, many will start to cause issues, whether through lack of support, vulnerabilities, or just how they interact with the platforms they run on. It's essential that we take updates.
+^ But it's hard. We tend to do it infrequently, every few months to a year. Because we don't do it that often, it's painful: lots of incompatibilities and tangles all at once.
+
+---
+
+# If it hurts, do it more often.
+
+^ We know what we need to do. We need to do it more often. Instead of doing it on a near annual cycle, what if we did it nearly daily?
+^ But how? This is not really something people do that often, at least intentionally. There is very little tooling for it. No named practices
+
+---
+
 ^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often)
 
 ---
 
-# The Experiment
+# Experiment: Dependency Update Daily
 
-^ TODO Quick prototype in Java that updates dependencies on command. Asked a team to experiment by making a build job (update all, build/test, commit/fail). Learned some valuable lessons: mostly worked. Some Major version number changes would need manual intervention (could be excluded temporarily) but at least we now knew this.
-^ TODO ancillary stuff: other exclusions around potential attack vectors, or major versions, libraries being abandoned (Hystrix)
-^ TODO great automated tests are essential! All levels: unit, integration, end-to-end (mention spring security header upgrade issue)
+* Update
+* Build and test
+* Commit/Revert
+* Commit causes CD to happen
+
+^ The team I wanted to experiment with on this were using Spring boot so I found some basic Gradle tooling that would update all dependencies to their latest versions. "use-latest-versions"
+^ I then challenged a team to make a build job that would run once a day, at say noon, that would update (update all, build/test, commit/revert)
 
 ---
 
-# Continuous Regeneration/Rejuvenation
+# Outcome: Dependency Update Daily
 
-^ TODO Explain the naming of this technique
+Mostly success!
+
+* Some Major Version upgrades would need intervention,
+* Temporary exclusions are important,
+* Found unexpected end-to-end issues!
+
+^ Learned some valuable lessons: mostly worked. Some Major version number changes would need manual intervention. Temporary exclusions were important. Spring security header change caused end-to-end issues. Quick to spot, easy to undo.
+
+---
+
+^ TODO ancillary stuff: other exclusions around potential attack vectors, or major versions, libraries being abandoned (Hystrix)
+^ TODO great automated tests are essential! All levels: unit, integration, end-to-end (mention spring security header upgrade issue)
+
+
+---
+
+## Continuous Regeneration
+
+![](images/regen.jpg)
+
+^ I was going to call this idea of keeping your dependencies updated "Continuous Regeneration". The slide basically writes itself. Dr Who regenerating! I was chatting this through with a few folk at a conference in November:, and someone rightly pointed out that maybe regeneration was a bad idea. Dr Who only regenerates every 2-4 years, in a fairly unpredicable. Not very continuous.
+
+---
+
+## Continuous Rejuvenation
+
+![right](images/rejuvenation.jpg)
+
+^ So instead, I'm calling it Continuous Rejuvenation. Just as we shouldn't let stress and problems pile up for months before treating ourselves, how about we do do the same for our systems? Just a little bit of rejuvenation every day... to stave off the fish from rotting.
 
 ---
 
