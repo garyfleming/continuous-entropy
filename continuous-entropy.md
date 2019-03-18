@@ -172,9 +172,24 @@ Mostly success!
 
 ---
 
-# Other languages
+# Dependency Updates: Other languages
+
+* Single versioned: Maven, Gradle, packages.config
+* Ranges and Lock files: gem/bundler, most JS frameworks.
+* Possibly open: pip, some JS frameworks, gem
+
+^ Clearly I can't be exhaustive about other languages and tools. There are too many variants.
+^ Singled versioned: one definitive version (3.1.4). Usually requires tooling that can check for updates and modify the dependency file with new versions. Some tooling already exists but YMMV. Good news: it just takes one of you to do this and open source it.
+^ Lock filed: open ranges (>=3.1.4) in one file, but running it creates a lock file. These tend to be easy: delete the lock file! Also want tooling to expand the ranges every once in a while (but less often)
+^ Possibly open: don't require a version. Easy (re-run) but dangerous: hard to reproduce environment when things go wrong. Most have some optional lock file. Use it!
 
 ^ TODO can't be exhaustive here, but maybe reference Python, Ruby, and JS. Most languages have some dependency file or a dependency file and a lock file. If the former, need an update mechanism. If the latter, just blow away your lock file. Consider how you'll manage exclusions.
+
+---
+
+# Always use a Lock file!
+
+^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came to poor lock file/dep management is pretty absurd.
 
 ---
 
