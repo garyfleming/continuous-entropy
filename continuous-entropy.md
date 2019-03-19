@@ -189,7 +189,7 @@ Mostly success!
 
 # Always use a Lock file!
 
-^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came to poor lock file/dep management is pretty absurd.
+^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd.
 
 ---
 
@@ -199,7 +199,7 @@ Mostly success!
 
 ---
 
-# Language Change
+# Language Upgrades
 
 ^ TODO closely related to runtime but not identical. In particular think about big breaking changes. Python 2 -> 3: still not settled. Some orgs have many Python 2 apps so cost of change is high, plus some of those apps no longer have organisational understanding (more later). This is hard.
 
@@ -212,13 +212,39 @@ Mostly success!
 
 ---
 
-# People
+# Language Trends/Obsolescence 
 
-^ TODO People will come and go. New people need to get up to speed. Teams will come and go. How do you make it resilient?
+^ TODO languages, eventually, fall out of favour. COBOL. FORTRAN. PERL. This is big. Hard. How do we avoid slipping into obsolescence?
+
+---
+
+# Problem
+## People Come and Go.
+
+^ 
+^ TODO People will come and go. New people need to get up to speed. Teams will come and go. How do you make it resilient? How do you know when to stop/change?
+
+---
+
+# If it hurts, do it more often.
+
+---
+
+# Practice and Prepare for Perfect People
+
+^ TODO make these points into slides
+^ Do retros on it: How would we onboard a new developer? What's different or interesting about our process and tools? What stories do we have that makes us us?
+^ Have tools that can take a new dev machine from zero to ready. Practice by wiping someone's machine every week.
+^ Use techniques like example mapping and user story maps to bring people into your domain quickly.
 
 ---
 
 ^ TODO general todo: make sure we're repeating the adage of "if its hard do it more"
+
+----
+
+^ TODO conclusion: make no mistake, no matter what you do, the fish *will* rot. Entropy is inevitable.
+
 
 ---
 
