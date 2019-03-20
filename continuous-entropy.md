@@ -227,18 +227,44 @@ a-different-dep
 
 ---
 
-# Next Layer: Runtimes
+# **Problem**
+## Runtimes
+
+* JVM
+* .NET
+* NPM version
+
+^ These are tools around our code that are dependencies but not in the same way. They provide platforms for our code to run on. Moving forward here is something we do rarely. Partly because the rate of change tends to be a bit slower, but also because it can be painful.
+^ That said, the trend in platforms is to speed up. Java, for example, has gone from a major release every 3-4 years to every 6 months.
 
 ^ TODO JVM version, NPM version, Ruby version. Consider using intermediary tooling like Jabba, RVM etc to allow you to test on newer versions. Need to be able to safely rollback to old version somehow.
 
 ---
 
-# Language Upgrades
+# The Continuous Now
+
+^ We're seeing this more and more, across browsers, and platforms. There is only now. There is only current, and continuous. Do you even know what version of Chrome or Firefox you use? You use IE?... that's a shame.
+
+---
+
+# Intermediary tooling.
+
+* Java -> Jabba
+* Ruby -> RVM
+* Python -> Virtualenv (to some degree)
+
+^ If your platform doesn't have the ability to easily switch versions (NPM is good here), then consider using an intermediary. Something that lets you run a job where you can easily install and test an upgrade of a new runtime, and safely switch back when it fails. Because it will sometimes.
+
+---
+
+# **Problem**
+## Language Upgrades
 
 ^ TODO closely related to runtime but not identical. In particular think about big breaking changes. Python 2 -> 3: still not settled. Some orgs have many Python 2 apps so cost of change is high, plus some of those apps no longer have organisational understanding (more later). This is hard.
 
 ---
 
+##
 # VMs, Servers, etc
 
 ^ TODO problems here: long-lived VMs and servers get ad-hoc patches or break in subtle ways (network card)
