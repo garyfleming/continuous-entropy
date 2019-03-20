@@ -82,11 +82,16 @@ theme: Ostrich, 1
 
 # Brief Intro to CI/CD
 
-Continuous integration: All developers merge their code to a shared mainline at least once a day.
+^ So, if we're going to be talking about frequent releases, we need to talk about Continuous Integration and Continuous Deployment. I don't want to spend too long on this part because, honestly, I see it as a baseline these days. If you're not already doing this, start there and don't worry about the rest yet.
 
+---
 
-^ Like I say, this should be familiar to many so I won't be spending a great deal of time on it.
-^ Continuous Integration... Build server ensures correctness. This pushes people towards good, advanced practice like Trunk Based Development. Problems come to light faster. This is a good thing. It's GOOD that you're suddenly getting a lot of merge conflicts -> Design conversations early. Rather than merge hell later.
+# Continuous Integration
+
+All developers merge their code to a shared mainline at __least__ once a day.
+
+^ Just this practice accelerates teams
+^ Continuous Integration... Build server ensures correctness. This pushes people towards good, advanced practice like Trunk Based Development, solid testing etc. Problems come to light faster. This is a good thing. It's GOOD that you're suddenly getting a lot of merge conflicts -> Design conversations early. Rather than merge hell later.
 
 ---
 
@@ -97,9 +102,9 @@ Continuous integration: All developers merge their code to a shared mainline at 
 
 ---
 
-# Brief Intro to CI/CD
+# Continuous Delivery
 
-## Continuous Delivery: all changes go to production; safely, quickly, and sustainably.
+All changes go to production; safely, quickly, and sustainably.
 
 ^ The gold standard here is that every commit that makes it through a CI build should be pushed to production. That can lead to hundreds of releases a week. Again, this
 will generally be augmented by using build pipelines that check software is working, as well as practices like blue-green releases for zero downtime deploys.
@@ -175,21 +180,50 @@ Mostly success!
 # Dependency Updates: Other languages
 
 * Single versioned: Maven, Gradle, packages.config
+
+```
+e.g
+5.4.1
+3.0-ALPHA
+1.3.2
+```
+
+^ Clearly I can't be exhaustive about other languages and tools. There are too many variants. Instead focus on dependency styles.
+^ Singled versioned: one definitive version. Usually requires tooling that can check for updates and modify the dependency file with new versions. Some tooling already exists but YMMV. Good news: it just takes one of you to do this and open source it.
+
+---
+
+# Dependency Updates: Other languages
+
 * Ranges and Lock files: gem/bundler, most JS frameworks.
+
+```
+>=5.4.1
+3.*
+[3.7.1)
+```
+
+^ Lock filed: open ranges in one file, but running it creates a lock file. These tend to be easy: delete the lock file! Also want tooling to expand the ranges every once in a while (but less often)
+^ A complication is that if you want to be able exclude dependencies, you're back to needing some kind of tooling.
+
+---
+
+# Dependency Updates: Other languages
+
 * Possibly open: pip, some JS frameworks, gem
 
-^ Clearly I can't be exhaustive about other languages and tools. There are too many variants.
-^ Singled versioned: one definitive version (3.1.4). Usually requires tooling that can check for updates and modify the dependency file with new versions. Some tooling already exists but YMMV. Good news: it just takes one of you to do this and open source it.
-^ Lock filed: open ranges (>=3.1.4) in one file, but running it creates a lock file. These tend to be easy: delete the lock file! Also want tooling to expand the ranges every once in a while (but less often)
-^ Possibly open: don't require a version. Easy (re-run) but dangerous: hard to reproduce environment when things go wrong. Most have some optional lock file. Use it!
+```
+some-dep
+a-different-dep
+```
 
-^ TODO can't be exhaustive here, but maybe reference Python, Ruby, and JS. Most languages have some dependency file or a dependency file and a lock file. If the former, need an update mechanism. If the latter, just blow away your lock file. Consider how you'll manage exclusions.
+^ Possibly open: don't require a version. Easy (re-run) but dangerous: hard to reproduce environment when things go wrong. Most have some optional lock file. Use it!
 
 ---
 
 # Always use a Lock file!
 
-^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd.
+^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd. By commit time, we should have single-version!
 
 ---
 
@@ -212,7 +246,7 @@ Mostly success!
 
 ---
 
-# Language Trends/Obsolescence 
+# Language Trends/Obsolescence
 
 ^ TODO languages, eventually, fall out of favour. COBOL. FORTRAN. PERL. This is big. Hard. How do we avoid slipping into obsolescence?
 
@@ -221,7 +255,7 @@ Mostly success!
 # Problem
 ## People Come and Go.
 
-^ 
+^
 ^ TODO People will come and go. New people need to get up to speed. Teams will come and go. How do you make it resilient? How do you know when to stop/change?
 
 ---
