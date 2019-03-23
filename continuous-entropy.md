@@ -35,7 +35,7 @@ theme: Ostrich, 1
 
 * No source code (written in an older language)
 * Runs in a green screen terminal,
-* Has to be emulated in Win Server 2000.
+* Has to be emulated.
 
 ^ The large company didn't have the source code, and the platform it ran on was long out of support. Options were limited, and the company was suddenly and unexpectedly in crisis.
 
@@ -65,15 +65,6 @@ theme: Ostrich, 1
 > "Disorder of a closed system"
 
 ^ This is the important part, thought I suspect still a little abstract: More disorder means more possible states of a system. Entropy of the universe ONLY increases. Same of any closed system.
-^ TODO still not convinced by this
-
-<!-- ---
-
-# Systems
-
-^ TODO Does defining systems actually help? Taking it out for now.
-^ Where parts come together to do something that the individual parts couldn't
-^ TODO this is a crappy definition of a system. Tighten it up. -->
 
 ---
 
@@ -96,9 +87,8 @@ theme: Ostrich, 1
 
 ---
 
-# Software and Entropy
+# Entropy in Software
 
-^ TODO rename slide?
 ^ So why have I been talking about entropy at all?
 ^ You might think that you write your software and put it into production and it'll remain the same forever. That's sadly not true. Code rots. It's a fish in a box, and the ice is melting.
 ^ What can we do to keep it cooler longer?
@@ -110,10 +100,11 @@ theme: Ostrich, 1
 ![ ](images/yarn.jpg)
 
 ^ We need to realise that there's no single solution to this problem. There are many. The best way of keeping our code living longer is to employ an arsenal of tooling, targeting different areas and different problems.
+^ Originally I tried to create a layered model to think about this, but the truth is it's a lot messier than that.
 
 ---
 
-# Problem
+# **Problem**
 ## Knowing whether your software is releasable
 
 ^ Let's start with something that I'm hoping is very familiar. An easy starter.
@@ -132,13 +123,23 @@ theme: Ostrich, 1
 All developers merge their code to a shared mainline at __least__ once a day.
 
 ^ Just this practice accelerates teams
-^ Continuous Integration... Build server ensures correctness. This pushes people towards good, advanced practice like Trunk Based Development, solid testing etc. Problems come to light faster. This is a good thing. It's GOOD that you're suddenly getting a lot of merge conflicts -> Design conversations early. Rather than merge hell later.
+^ Continuous Integration... Build server ensures correctness. This pushes people towards good, advanced practice like TDD etc. Problems come to light faster. This is a good thing. It's GOOD that you're suddenly getting a lot of merge conflicts -> Design conversations early. Rather than merge hell later.
+
+---
+
+# Continuous Integration
+
+Related:
+
+* Trunk-Based Development
+* Feature Toggles
+
+^ TODO explain it. Opposite of branching. Faster, safer. Feature toggles.
 
 ---
 
 # If it hurts, do it more often.
 
-^ TODO consider pulling up to after multi-faceted/before the first problem
 ^ First read this mantra in Continuous Delivery (Humble, Farley). And it's the key revelation behind most of the practices I'll mention today: if something hurts, do it more often. You'll figure out your options for making it not hurt. For making it mundane. Boring.
 ^ I want this stuff to be boring so I can focus my energy and excitement on customer stuff.
 
@@ -154,7 +155,15 @@ will generally be augmented by using build pipelines that check software is work
 
 ---
 
-# Problem
+# Continuous Delivery
+
+Related: Blue-Green releases.
+
+^ TODO explain what they are. How they work. (Make a blue/green glasgow joke?)
+
+---
+
+# **Problem**
 ## Dependency Updates
 
 ^ Dependencies are a key part of code rot. If you don't update them, many will start to cause issues, whether through lack of support, vulnerabilities, or just how they interact with the platforms they run on. It's essential that we take updates.
@@ -167,9 +176,28 @@ will generally be augmented by using build pipelines that check software is work
 ^ We know what we need to do. We need to do it more often. Instead of doing it on a near annual cycle, what if we did it nearly daily?
 ^ But how? This is not really something people do that often, at least intentionally. There is very little tooling for it. No named practices
 
-<!-- ---
+---
 
-^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often) -->
+# Idea
+## Update Dependencies Daily
+
+^ So, what if we did our updates every day? We'd need some way of finding out which dependencies have newer versions, We'd need to apply those changes, and we'd need to find out whether it broke anything.
+
+---
+
+## Continuous Regeneration
+
+![right](images/regen.jpg)
+
+^ I was going to call this idea of keeping your dependencies updated "Continuous Regeneration". The slide basically writes itself. Dr Who regenerating! I was chatting this through with a few folk at a conference in November:, and someone rightly pointed out that maybe regeneration was a bad idea. Dr Who only regenerates every 2-4 years, in a fairly unpredicable. Not very continuous.
+
+---
+
+## Continuous Rejuvenation
+
+![right](images/rejuvenation.jpg)
+
+^ So instead, I'm calling it Continuous Rejuvenation. Just as we shouldn't let stress and problems pile up for months before treating ourselves, how about we do do the same for our systems? Just a little bit of rejuvenation every day... to stave off the fish from rotting.
 
 ---
 
@@ -194,28 +222,6 @@ Mostly success!
 * Found unexpected end-to-end issues!
 
 ^ Learned some valuable lessons: mostly worked. Some Major version number changes would need manual intervention. Temporary exclusions were important. Spring security header change caused end-to-end issues. Quick to spot, easy to undo.
-
----
-
-^ TODO ancillary stuff: other exclusions around potential attack vectors, or major versions, libraries being abandoned (Hystrix)
-^ TODO great automated tests are essential! All levels: unit, integration, end-to-end (mention spring security header upgrade issue)
-
-
----
-
-## Continuous Regeneration
-
-![](images/regen.jpg)
-
-^ I was going to call this idea of keeping your dependencies updated "Continuous Regeneration". The slide basically writes itself. Dr Who regenerating! I was chatting this through with a few folk at a conference in November:, and someone rightly pointed out that maybe regeneration was a bad idea. Dr Who only regenerates every 2-4 years, in a fairly unpredicable. Not very continuous.
-
----
-
-## Continuous Rejuvenation
-
-![right](images/rejuvenation.jpg)
-
-^ So instead, I'm calling it Continuous Rejuvenation. Just as we shouldn't let stress and problems pile up for months before treating ourselves, how about we do do the same for our systems? Just a little bit of rejuvenation every day... to stave off the fish from rotting.
 
 ---
 
@@ -265,7 +271,16 @@ a-different-dep
 
 # Always use a Lock file!
 
+Avoid "It works on my machine"
+
 ^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd. By commit time, we should have single-version!
+
+<!-- ---
+
+^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often)
+^ TODO ancillary stuff: other exclusions around potential attack vectors, or major versions, libraries being abandoned (Hystrix)
+^ TODO great automated tests are essential! All levels: unit, integration, end-to-end (mention spring security header upgrade issue)
+-->
 
 ---
 
@@ -308,12 +323,23 @@ a-different-dep
 ## Standing Servers
 
 ^ Long-lived servers will develop issues. This is inevitable. It doesn't matter whether they're real or virtualised. This could be because of admins or developers making adhoc changes that aren't consistent, or it could be because of hardware breakdown (have you any idea how irritating it is to fix a long-lived server when it turns out the network card has broken? It's not fun.)
-^ This is a space we're getting better at, but we don't do often enough because it can be a lot of work...
+
+
+---
+
+# Avoid Snowflake Servers
+
+* Hard to Reproduce
+* Hard to Modify
+* Require manual processes, auditing, and docs.
+
+^ Named by Fowler. We know that most long-lived servers are snowflakes. We think we understand them and their uniqueness, but they're almost impossible to recreate. Our test environments and production envs tend to be different. Modifications are hard because we're only guessing at current state. They require laborious process. I don't want that.
 
 ---
 
 # If it hurts, do it more often.
 
+^ This is a space we're getting better at, but we don't do often enough because it can be a lot of work...
 ^ And we know by know, that it if hurts we should do it more often.
 
 ---
@@ -325,7 +351,8 @@ a-different-dep
 * Containerisation
 * Various cloud toolkits
 
-^ Thankfully, tooling is great in this space. We can use some tools to define what we want from our servers. We can use Containerisation like Docker to isolate our app from our servers to move forward more oftern. We can script what we want from cloud platforms.
+^ Thankfully, tooling is great in this space. We can use some tools to define what we want from our servers. We can use Containerisation like Docker to isolate our app from our servers to move forward more often. We can script what we want from cloud platforms.
+^ TODO go longer on each of these
 
 ---
 
@@ -338,6 +365,7 @@ a-different-dep
 ^ We can marry those tools to interesting engineering practices that encourage us to get used to change. We can tear down environments on a daily/weekly basis so that we know our tools are in a good state (and changes are made via them).
 ^ We can use chaos engineering (deleting, removing services in production) to ensure we have repeatable and resilient environments.
 ^ We can wipe a dev environment a week, to ensure that we get back at automating them.
+^ TODO think of another engineering practice here, and move dev laptop wipes to the people section
 
 ---
 
@@ -375,13 +403,18 @@ a-different-dep
 
 ^ Do retros on it: How would we onboard a new developer? What's different or interesting about our process and tools? What stories do we have that makes us us?
 ^ Just telling these stories more often will make it easier to bring people in.
+^ TODO longer on value.
 
 ---
 
 # **People Prepping**
-## Stories
+## Domain Knowledge
+
+* User Story Maps
+* Example mapping
 
 ^ Use techniques like example mapping and user story maps to bring people into your domain quickly.
+^ TODO spend a minute talking about each of these
 
 ---
 
@@ -390,6 +423,7 @@ a-different-dep
 
 ^ Use liquidity matrixes to keep resiliency. If there are bits of knowledge or process in your teams that only one or two people know, then SLMs help visualise that. You can then choose to spread that information around by training more people up on it.
 ^ TODO add image
+^ TODO more detail on what these are and how to use them
 
 ---
 
@@ -397,6 +431,7 @@ a-different-dep
 ## Bigger Changes
 
 ^ Dynamic reteaming by Heidi Helfand is a good book on how to utilise inevitable team change to your advantage. Go read it.
+^ TODO slightly longer 
 
 
 ---
