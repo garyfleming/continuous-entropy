@@ -53,7 +53,7 @@ theme: Ostrich, 1
 
 # What is Entropy?
 
-> "a thermodynamic quantity representing the unavailability of a system's thermal energy for conversion into mechanical work, often interpreted as the degree of disorder or randomness in the system."
+> "a thermodynamic quantity representing the unavailability of a system's thermal energy for conversion into mechanical work, often interpreted as the degree of disorder or randomness in [a closed] system."
 
 ^ I'm sure that has cleared that up.
 ^ I'll try to explain but, if you're a physicist, you'll probably disagree. That's fine. I'm simplifying for the benefit of everyone else, which means I'm going to be a bit wrong.
@@ -62,7 +62,7 @@ theme: Ostrich, 1
 
 # What is Entropy?
 
-> "Disorder of a system"
+> "Disorder of a closed system"
 
 ^ This is the important part, thought I suspect still a little abstract: More disorder means more possible states of a system. Entropy of the universe ONLY increases. Same of any closed system.
 ^ TODO still not convinced by this
@@ -140,6 +140,7 @@ All developers merge their code to a shared mainline at __least__ once a day.
 
 ^ TODO consider pulling up to after multi-faceted/before the first problem
 ^ First read this mantra in Continuous Delivery (Humble, Farley). And it's the key revelation behind most of the practices I'll mention today: if something hurts, do it more often. You'll figure out your options for making it not hurt. For making it mundane. Boring.
+^ I want this stuff to be boring so I can focus my energy and excitement on customer stuff.
 
 ---
 
@@ -166,9 +167,9 @@ will generally be augmented by using build pipelines that check software is work
 ^ We know what we need to do. We need to do it more often. Instead of doing it on a near annual cycle, what if we did it nearly daily?
 ^ But how? This is not really something people do that often, at least intentionally. There is very little tooling for it. No named practices
 
----
+<!-- ---
 
-^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often)
+^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often) -->
 
 ---
 
@@ -345,6 +346,8 @@ a-different-dep
 ----
 
 ^ TODO conclusion: make no mistake, no matter what you do, the fish *will* rot. Entropy is inevitable.
+
+^ TODO Conclusion: You can do this. The soxteen story? That's something to avoid, but that happened at the same place as the Continuous Rejuvenation story. They got better. You can too.
 
 
 ---
