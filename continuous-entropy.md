@@ -270,7 +270,7 @@ a-different-dep
 ---
 
 # **Problem**
-## Runtimes
+## Runtime Rot
 
 * JVM
 * .NET
@@ -278,8 +278,6 @@ a-different-dep
 
 ^ These are tools around our code that are dependencies but not in the same way. They provide platforms for our code to run on. Moving forward here is something we do rarely. Partly because the rate of change tends to be a bit slower, but also because it can be painful.
 ^ That said, the trend in platforms is to speed up. Java, for example, has gone from a major release every 3-4 years to every 6 months.
-
-^ TODO JVM version, NPM version, Ruby version. Consider using intermediary tooling like Jabba, RVM etc to allow you to test on newer versions. Need to be able to safely rollback to old version somehow.
 
 ---
 
@@ -289,7 +287,7 @@ a-different-dep
 
 ---
 
-# Intermediary tooling.
+# Intermediary Tooling
 
 * Java -> Jabba
 * Ruby -> RVM
@@ -297,63 +295,127 @@ a-different-dep
 
 ^ If your platform doesn't have the ability to easily switch versions (NPM is good here), then consider using an intermediary. Something that lets you run a job where you can easily install and test an upgrade of a new runtime, and safely switch back when it fails. Because it will sometimes.
 
+<!-- ---
+
+# **Problem**
+## Language Schisms
+
+^ TODO closely related to runtime but not identical. In particular think about big breaking changes. Python 2 -> 3: still not settled. Some orgs have many Python 2 apps so cost of change is high, plus some of those apps no longer have organisational understanding (more later). This is hard. -->
+
 ---
 
 # **Problem**
-## Language Upgrades
+## Standing Servers
 
-^ TODO closely related to runtime but not identical. In particular think about big breaking changes. Python 2 -> 3: still not settled. Some orgs have many Python 2 apps so cost of change is high, plus some of those apps no longer have organisational understanding (more later). This is hard.
-
----
-
-##
-# VMs, Servers, etc
-
-^ TODO problems here: long-lived VMs and servers get ad-hoc patches or break in subtle ways (network card)
-^ TODO infrastructure as code, phoenix architecture, serverless etc
-
----
-
-# Language Trends/Obsolescence
-
-^ TODO languages, eventually, fall out of favour. COBOL. FORTRAN. PERL. This is big. Hard. How do we avoid slipping into obsolescence?
-
----
-
-# Problem
-## People Come and Go.
-
-^
-^ TODO People will come and go. New people need to get up to speed. Teams will come and go. How do you make it resilient? How do you know when to stop/change?
+^ Long-lived servers will develop issues. This is inevitable. It doesn't matter whether they're real or virtualised. This could be because of admins or developers making adhoc changes that aren't consistent, or it could be because of hardware breakdown (have you any idea how irritating it is to fix a long-lived server when it turns out the network card has broken? It's not fun.)
+^ This is a space we're getting better at, but we don't do often enough because it can be a lot of work...
 
 ---
 
 # If it hurts, do it more often.
 
+^ And we know by know, that it if hurts we should do it more often.
+
 ---
 
-# Practice and Prepare for Perfect People
+# Infrastructure as Code
 
-^ TODO make these points into slides
+* Chef/Puppet/Ansible
+* Terraform
+* Containerisation
+* Various cloud toolkits
+
+^ Thankfully, tooling is great in this space. We can use some tools to define what we want from our servers. We can use Containerisation like Docker to isolate our app from our servers to move forward more oftern. We can script what we want from cloud platforms.
+
+---
+
+# Engineering practice
+
+* Daily Deletion
+* Chaos Engineering
+* Dev Laptop Wipes
+
+^ We can marry those tools to interesting engineering practices that encourage us to get used to change. We can tear down environments on a daily/weekly basis so that we know our tools are in a good state (and changes are made via them).
+^ We can use chaos engineering (deleting, removing services in production) to ensure we have repeatable and resilient environments.
+^ We can wipe a dev environment a week, to ensure that we get back at automating them.
+
+---
+
+# Caution: Take the Updates
+
+^ If we're deleting environments frequently, it's worth also taking things like OS updates as part of that. It lets us ensure we are not stuck in an environment that is rotting away.
+
+<!-- ---
+
+# **Problem**
+## Languishing Languages
+
+
+
+^ TODO languages, eventually, fall out of favour. COBOL. FORTRAN. PERL. This is big. Hard. How do we avoid slipping into obsolescence?
+^ TODO new title: Languishing Languages -->
+
+---
+
+# **Problem**
+## People Come and Go.
+
+^ We know that people will come and go. That means knowledge leaving our teams, and people needing to get up to speed. Very few teams I see are any good at this. At best, teams tend to have a dev set-up script somewhere and then pair a bit, and at worst they newbie gets told to go read some documentation... for days. It's hard!
+
+---
+
+# If it hurts, do it more often.
+
+^ So let's do it more often. Let's get used to this reality and figure out how to do better.
+
+---
+
+# **People Prepping**
+## Retros
+
 ^ Do retros on it: How would we onboard a new developer? What's different or interesting about our process and tools? What stories do we have that makes us us?
-^ Have tools that can take a new dev machine from zero to ready. Practice by wiping someone's machine every week.
+^ Just telling these stories more often will make it easier to bring people in.
+
+---
+
+# **People Prepping**
+## Stories
+
 ^ Use techniques like example mapping and user story maps to bring people into your domain quickly.
 
 ---
 
-^ TODO general todo: make sure we're repeating the adage of "if its hard do it more"
+# **People Prepping**
+## Staff Liquidity Matrices
 
-----
+^ Use liquidity matrixes to keep resiliency. If there are bits of knowledge or process in your teams that only one or two people know, then SLMs help visualise that. You can then choose to spread that information around by training more people up on it.
+^ TODO add image
 
-^ TODO conclusion: make no mistake, no matter what you do, the fish *will* rot. Entropy is inevitable.
+---
 
-^ TODO Conclusion: You can do this. The soxteen story? That's something to avoid, but that happened at the same place as the Continuous Rejuvenation story. They got better. You can too.
+# **People Prepping**
+## Bigger Changes
 
+^ Dynamic reteaming by Heidi Helfand is a good book on how to utilise inevitable team change to your advantage. Go read it.
+
+
+---
+
+# Everything is Rotting...
+
+^ There are many, many directions and rabbitholes you can go down when you start on this kind of improvement journey because everything is rotting away. There are **many** more that I haven't listed. That can be overwhelming.
+
+---
+
+# ...You Can Get Better
+
+^ You can get better. Sure, the proverbial fish in a box is rotting, but this is not a closed system. You can intervene.
+^ Because the company that had that Soxteen problem from the start? That same company has since done almost all of the things I've been talking about. They're not perfect, but they're a lot better. You can be too.
 
 ---
 
 # Thank You
 
-![inline](images/cat3.gif)
+## @garyfleming
 
-@garyfleming
+![right](images/beautiful-fish.jpg)
