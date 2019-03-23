@@ -1,5 +1,46 @@
 theme: Ostrich, 1
 
+# 1995
+
+^ The year is 1995. A large company who do... it doesn't really matter what, bring a key piece of their tech stack in-house, having outsourced it for years. It collates a bunch of data and generates a document once a day. In the header for this document is a date in long written out format.
+
+---
+
+# November Fifteen, Nineteen Ninety-Five
+
+^ That's fine. The problem is... there's a typo. Rather than sixteen, someone spelt it differently...
+
+---
+
+## Sixteen =>
+## Soxteen
+
+^ Soxteen. The bigger problem is that the company weren't able to get the source code to make a fix. So every day, on the soxteenth day of the month they ran a manual process to fix it: they'd print out the document, manually correct it, and scan it back in.
+^ That meant for over 20 years someone, the same person, had to be free on the soxteenth of the month to make a fix. They'd arrange their holidays around it. When it was a weekend, they'd come in.
+
+---
+
+## Sixteen =>
+## Soxteen
+
+^ Now that was awful, but tenable, for a while. For 20 years this happened, in the bowels of the company, far from anyone who could make a change. Until 21 years rolled around. Anyone who has done the date calculation in their head knows what 21 years after 1995 is...
+
+---
+
+# Two Thousand Soxteen
+
+^ ... and so it went from a monthly workaround to a daily workaround. That... was less tenable.
+
+---
+
+* No source code (written in an older language)
+* Runs in a green screen terminal,
+* Has to be emulated in Win Server 2000.
+
+^ The large company didn't have the source code, and the platform it ran on was long out of support. Options were limited, and the company was suddenly and unexpectedly in crisis.
+
+---
+
 # Fighting Continuous Entropy
 ## Adventures in Continuous Delivery
 
@@ -76,7 +117,7 @@ theme: Ostrich, 1
 ## Knowing whether your software is releasable
 
 ^ Let's start with something that I'm hoping is very familiar. An easy starter.
-^ If we want to know whether our software is starting to rot, the easiest thing we can do is release it. If we can release it frequently, we've got a really good starting point.
+^ If we want to know whether our software is starting to rot, the easiest thing we can do is release it. If we can release it frequently, we've got a really solid base.
 
 ---
 
