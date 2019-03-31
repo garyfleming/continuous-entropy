@@ -30,7 +30,7 @@ theme: Posterish
 
 ---
 
-#👨🏻‍🦳  
+# 👨🏻‍🦳  
 
 
 ^ Nigel works for a large company who do... it doesn't really matter what, bring a key piece of their tech stack in-house, having outsourced it for years. It collates a bunch of data and generates a document once a day. In the header for this document is a date in long written out format.
@@ -125,6 +125,13 @@ theme: Posterish
 
 ---
 
+# 👨🏻‍🦳  
+
+^ Nigel's problem was a fairly extreme case of this, so let's think about some problems that show entropy that might involve your day to day.
+^ Let's use how a modern team might work to reflect on the problem's of the past.
+
+---
+
 # Multi-faceted
 
 ![ ](images/yarn.jpg)
@@ -137,7 +144,7 @@ theme: Posterish
 # **Problem**
 ## Knowing whether your software is releasable
 
-^ Let's start with something that I'm hoping is very familiar. An easy starter.
+^ Let's start with something that I'm hoping is very familiar. An easy starter. When Nigel took over, they weren't really releasing the software any more, just running it. That makes things hard.
 ^ If we want to know whether our software is starting to rot, the easiest thing we can do is release it. If we can release it frequently, we've got a really solid base.
 
 ---
@@ -164,7 +171,8 @@ Related:
 * Trunk-Based Development
 * Feature Toggles
 
-^ TODO explain it. Opposite of branching. Faster, safer. Feature toggles.
+^ Explain TBD. Opposite of branching. Faster, safer. Feature toggles.
+^ TODO expand?
 
 ---
 
@@ -189,7 +197,9 @@ will generally be augmented by using build pipelines that check software is work
 
 Related: Blue-Green releases.
 
-^ TODO explain what they are. How they work. (Make a blue/green glasgow joke?)
+^ One way we can do CD safely is Blue/Green releases. We create two versions of our stack, whatever that might be, one is called blue and one is called green. When we do a release, traffic goes to blue, we upgrade green, and traffic starts switching over. If it all goes well, all traffic continues, and we upgrade blue. If goes badly, fail back
+^ TODO image
+^ TODO blue/green joke
 
 ---
 
@@ -305,17 +315,30 @@ Avoid "It works on my machine"
 
 ^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd. By commit time, we should have single-version!
 
-<!-- ---
 
-^ TODO acknowledge that dependencies are a key part of code rot. Make sure you store the dependencies you need (go light on this section). Not enough. They will have gained security vulnerabilities and patches, and become incompatible with outer layers - but taking updates is painful (ask how often people update dependencies?) -- This is the core problem. What happens if we did this way more often? Like Daily. (if it's hard do it more often)
+---
+
+# Good Tests are Essential!
+
+^ TODO IMAGE pyramid?
+^ If you're going to try this, or in fact, just about any major continuous effort, it forces you to improve your technical practices. You have to write good, appropriate tests if you don't want to get stuck. That's at all levels: unit, integration, end-to-end
+^ The team I was trying this out with found some really weird bugs when they upgraded one system in a microservice architecture and not the other, that would've really hurt them if they didn't have these tests.
+
+<!--
+
 ^ TODO ancillary stuff: other exclusions around potential attack vectors, or major versions, libraries being abandoned (Hystrix)
-^ TODO great automated tests are essential! All levels: unit, integration, end-to-end (mention spring security header upgrade issue)
 -->
 
 ---
 
 # **Problem**
 ## Runtime Rot
+
+^ Now Nigel's system ran on some old green screen runtime. It was obscure, even for the time. Moving it forward was extremely difficult. You might this this wouldn't affect you, but... I think it does
+
+---
+
+# Rot Will Set In
 
 * JVM
 * .NET
@@ -340,12 +363,20 @@ Avoid "It works on my machine"
 
 ^ If your platform doesn't have the ability to easily switch versions (NPM is good here), then consider using an intermediary. Something that lets you run a job where you can easily install and test an upgrade of a new runtime, and safely switch back when it fails. Because it will sometimes.
 
+
 <!-- ---
 
 # **Problem**
 ## Language Schisms
 
 ^ TODO closely related to runtime but not identical. In particular think about big breaking changes. Python 2 -> 3: still not settled. Some orgs have many Python 2 apps so cost of change is high, plus some of those apps no longer have organisational understanding (more later). This is hard. -->
+
+---
+
+# **Problem**
+## Standing Servers
+
+^ Another issue that would stop Nigel from moving things forward was that everything in the stack was fixed. It was running in a long-standing server. It was flaky.
 
 ---
 
@@ -403,15 +434,43 @@ Avoid "It works on my machine"
 
 ^ If we're deleting environments frequently, it's worth also taking things like OS updates as part of that. It lets us ensure we are not stuck in an environment that is rotting away.
 
-<!-- ---
+---
 
 # **Problem**
 ## Languishing Languages
 
+^ Despite the fact the source code was gone, Nigel's system would've been hard to upgrade anyway. It was written in a language that is rarely used these days called Delphi. Anyone know Delphi?
+
+---
+
+# **Problem**
+## Languishing Languages
+
+^ See, that's the problem. Hiring people who know Cobol, Fortran, Perl is hard and expensive (rare). Training them up is hard because people often don't want to. Keeping them is harder, because now they can go charge more elsewhere.
+
+---
+
+# Avoiding Obsolescence
+
+* Move to new versions,
+* Cautiously embrace new languages,
+* Design language agnostic APIs
 
 
-^ TODO languages, eventually, fall out of favour. COBOL. FORTRAN. PERL. This is big. Hard. How do we avoid slipping into obsolescence?
-^ TODO new title: Languishing Languages -->
+^ Move to new versions. Go to new languages cautiously (don't want to have a gazillion). Design APIs that can easily be reimplemented in other languages. Occasionally try it.
+
+---
+
+## Destroy Your Microservices
+
+^ If we think that microservices are inherently replaceable, they should help us not fall into this language trap. You know that adage that your backups don't exist unless you deliberately practice restoring them? Your microservices aren't replaceable unless you deliberately practice rewriting them.
+
+---
+
+# **Problem**
+## People Come and Go.
+
+^ One thing that should worry you about Nigel's story is that there's just one of him. He has a truck factor of one. He could leave, he could get ill, many things could happen.
 
 ---
 
@@ -475,7 +534,7 @@ Avoid "It works on my machine"
 # ...You Can Get Better
 
 ^ You can get better. Sure, the proverbial fish in a box is rotting, but this is not a closed system. You can intervene.
-^ Because the company that had that Soxteen problem from the start? That same company has since done almost all of the things I've been talking about. They're not perfect, but they're a lot better. You can be too.
+^ Because the company that had Nigel worked for? That same company has since done almost all of the things I've been talking about. They're not perfect, but they're a lot better. You can be too.
 
 ---
 
