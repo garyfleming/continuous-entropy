@@ -1,29 +1,60 @@
-theme: Ostrich, 1
+theme: Posterish
 
 # 1995
 
-^ The year is 1995. A large company who do... it doesn't really matter what, bring a key piece of their tech stack in-house, having outsourced it for years. It collates a bunch of data and generates a document once a day. In the header for this document is a date in long written out format.
+^ The year is 1995. This is where out story begins. Since some of you may not remember 1995, let me tell you about it...
 
 ---
 
-# November Fifteen, Nineteen Ninety-Five
+# 1995
 
-^ That's fine. The problem is... there's a typo. Rather than sixteen, someone spelt it differently...
+![left](images/netscape.svg)
+
+^ Netscape Navigator was recently released and was the dominant web browser in the world.
+
+---
+
+# 1995
+
+![left](images/goldeneye.jpg)
+
+^ After the longest gap in Bond filming history, the franchise returned with Pierce Brosnan in Goldeneye. Definitely the best film, and later easily the best film to videogame adaptation.
+
+---
+
+# 1995
+
+![left](images/marvel.jpg)
+
+^ And, you might remember from this year's documentary, Captain marvel was running around, hunting down Skrulls. But she is not the hero of today's story... no, that would be Nigel.
+
+---
+
+#👨🏻‍🦳  
+
+
+^ Nigel works for a large company who do... it doesn't really matter what, bring a key piece of their tech stack in-house, having outsourced it for years. It collates a bunch of data and generates a document once a day. In the header for this document is a date in long written out format.
+
+---
+
+## November Fifteen, Nineteen Ninety-Five
+
+^ Nigel thinks this is fine. The problem is... there's a typo. Rather than sixteen, someone spelt it differently...
 
 ---
 
 ## Sixteen =>
 ## Soxteen
 
-^ Soxteen. The bigger problem is that the company weren't able to get the source code to make a fix. So every day, on the soxteenth day of the month they ran a manual process to fix it: they'd print out the document, manually correct it, and scan it back in.
-^ That meant for over 20 years someone, the same person, had to be free on the soxteenth of the month to make a fix. They'd arrange their holidays around it. When it was a weekend, they'd come in.
+^ Soxteen. The bigger problem is that the company weren't able to get the source code to make a fix. So every day, on the soxteenth day of the month Nigel ran a manual process to fix it: he'd print out the document, manually correct it, and scan it back in.
+^ That meant for over 20 years someone, Nigel, had to be free on the soxteenth of the month to make a fix. He'd arrange their holidays around it. When it was a weekend, he'd come in.
 
 ---
 
 ## Sixteen =>
 ## Soxteen
 
-^ Now that was awful, but tenable, for a while. For 20 years this happened, in the bowels of the company, far from anyone who could make a change. Until 21 years rolled around. Anyone who has done the date calculation in their head knows what 21 years after 1995 is...
+^ Now that was awful, but tenable, for a while. For 20 years this happened, in the bowels of the company, far from anyone who could make a change. Until 21 years rolled around, Nigel did this task. Anyone who has done the date calculation in their head knows what 21 years after 1995 is...
 
 ---
 
@@ -37,14 +68,13 @@ theme: Ostrich, 1
 * Runs in a green screen terminal,
 * Has to be emulated.
 
-^ The large company didn't have the source code, and the platform it ran on was long out of support. Options were limited, and the company was suddenly and unexpectedly in crisis.
+^ The large company didn't have the source code, and the platform it ran on was long out of support. Options were limited, and the company was suddenly and unexpectedly in crisis. Nigel was worried.
 
 ---
 
-# Fighting Continuous Entropy
-## Adventures in Continuous Delivery
-
-@garyfleming
+## Fighting Continuous Entropy
+### Adventures in Continuous Delivery
+### @garyfleming
 
 ^ My name is... I am a...
 ^ The talk is called Fighting Continuous Entropy. When I have a talk called something like that, I have to accept that some of the audience, maybe most of you, don't know what entropy is. So let's start with something not technical (in the software sense)
@@ -185,7 +215,7 @@ Related: Blue-Green releases.
 
 ---
 
-## Continuous Regeneration
+# Continuous Regeneration
 
 ![right](images/regen.jpg)
 
@@ -193,7 +223,7 @@ Related: Blue-Green releases.
 
 ---
 
-## Continuous Rejuvenation
+# Continuous Rejuvenation
 
 ![right](images/rejuvenation.jpg)
 
@@ -431,7 +461,7 @@ Avoid "It works on my machine"
 ## Bigger Changes
 
 ^ Dynamic reteaming by Heidi Helfand is a good book on how to utilise inevitable team change to your advantage. Go read it.
-^ TODO slightly longer 
+^ TODO slightly longer
 
 
 ---
