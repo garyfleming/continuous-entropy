@@ -142,16 +142,16 @@ theme: Posterish
 ---
 
 # **Problem**
-## Knowing whether your software is releasable
+## Knowing whether your software is deployable
 
-^ Let's start with something that I'm hoping is very familiar. An easy starter. When Nigel took over, they weren't really releasing the software any more, just running it. That makes things hard.
-^ If we want to know whether our software is starting to rot, the easiest thing we can do is release it. If we can release it frequently, we've got a really solid base.
+^ Let's start with something that I'm hoping is very familiar. An easy starter. When Nigel took over, they weren't really deploying the software any more, just running it. That makes things hard.
+^ If we want to know whether our software is starting to rot, the easiest thing we can do is deploy it. If we can deploy it frequently, we've got a really solid base.
 
 ---
 
 # Brief Intro to CI/CD
 
-^ So, if we're going to be talking about frequent releases, we need to talk about Continuous Integration and Continuous Deployment. I don't want to spend too long on this part because, honestly, I see it as a baseline these days. If you're not already doing this, start there and don't worry about the rest yet.
+^ So, if we're going to be talking about frequent deployments, we need to talk about Continuous Integration and Continuous Deployment. I don't want to spend too long on this part because, honestly, I see it as a baseline these days. If you're not already doing this, start there and don't worry about the rest yet.
 
 ---
 
@@ -183,7 +183,7 @@ Related:
 
 ---
 
-# Continuous Delivery
+# Continuous Deployment
 
 All changes go to production; safely, quickly, and sustainably.
 
@@ -193,13 +193,18 @@ will generally be augmented by using build pipelines that check software is work
 
 ---
 
-# Continuous Delivery
+# Continuous Deployment
 
 Related: Blue-Green releases.
 
 ^ One way we can do CD safely is Blue/Green releases. We create two versions of our stack, whatever that might be, one is called blue and one is called green. When we do a release, traffic goes to blue, we upgrade green, and traffic starts switching over. If it all goes well, all traffic continues, and we upgrade blue. If goes badly, fail back
 ^ TODO image
 ^ TODO blue/green joke
+
+---
+
+![inline](images/blue-green.jpg)
+
 
 ---
 
@@ -334,7 +339,7 @@ Avoid "It works on my machine"
 # **Problem**
 ## Runtime Rot
 
-^ Now Nigel's system ran on some old green screen runtime. It was obscure, even for the time. Moving it forward was extremely difficult. You might this this wouldn't affect you, but... I think it does
+^ Now Nigel's system ran on some old green screen runtime. It was obscure, even for the time. Moving it forward was extremely difficult. You might think this wouldn't affect you, but... I think it does
 
 ---
 
@@ -359,9 +364,10 @@ Avoid "It works on my machine"
 
 * Java -> Jabba
 * Ruby -> RVM
+* Node -> NVM
 * Python -> Virtualenv (to some degree)
 
-^ If your platform doesn't have the ability to easily switch versions (NPM is good here), then consider using an intermediary. Something that lets you run a job where you can easily install and test an upgrade of a new runtime, and safely switch back when it fails. Because it will sometimes.
+^ If your platform doesn't have the ability to easily switch versions, then consider using an intermediary. Something that lets you run a job where you can easily install and test an upgrade of a new runtime, and safely switch back when it fails. Because it will sometimes.
 
 
 <!-- ---
@@ -447,6 +453,13 @@ Avoid "It works on my machine"
 ## Languishing Languages
 
 ^ See, that's the problem. Hiring people who know Cobol, Fortran, Perl is hard and expensive (rare). Training them up is hard because people often don't want to. Keeping them is harder, because now they can go charge more elsewhere.
+^ if you want to get rich, learn cobol
+
+---
+
+![inline](images/yacht.jpg)
+
+^ You can name your first Yacht after me
 
 ---
 
@@ -513,6 +526,10 @@ Avoid "It works on my machine"
 ^ Use liquidity matrixes to keep resiliency. If there are bits of knowledge or process in your teams that only one or two people know, then SLMs help visualise that. You can then choose to spread that information around by training more people up on it.
 ^ TODO add image
 ^ TODO more detail on what these are and how to use them
+
+---
+
+![inline](images/slm.jpg)
 
 ---
 
