@@ -1,5 +1,11 @@
 # Possible TODOs.
 
+Personal Feedback
+
+* Make it less polemic. Use positive messages: make things dull and cosy so you can get better value.
+* Consider cutting down the team stuff at the end
+* Nail the landing better. The fish thing doesn't really work at the end.
+
 * Use the shearing layers metaphor from How Buildings Learn.
 * Different levels of change: code, libraries, runtimes (JVM), OS, etc. Security patches.
 * Needs a degree of automation that most teams don't embrace.
