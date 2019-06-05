@@ -2,6 +2,14 @@ theme: Posterish
 
 # 1995
 
+^ The year is 1995. This is where our story begins. Since some of you may not remember 1995, let me tell you about it...
+
+![ hide](images/sploop.m4a)
+
+---
+
+# 1995
+
 ^ The year is 1995. This is where out story begins. Since some of you may not remember 1995, let me tell you about it...
 
 ---
@@ -157,7 +165,7 @@ theme: Posterish
 
 # Continuous Integration
 
-All developers merge their code to a shared mainline at __least__ once a day.
+All developers/testers merge their code to a shared mainline at __least__ once a day.
 
 ^ Just this practice accelerates teams
 ^ Continuous Integration... Build server ensures correctness. This pushes people towards good, advanced practice like TDD etc. Problems come to light faster. This is a good thing. It's GOOD that you're suddenly getting a lot of merge conflicts -> Design conversations early. Rather than merge hell later.
@@ -189,7 +197,7 @@ All changes go to production; safely, quickly, and sustainably.
 
 ^ The gold standard here is that every commit that makes it through a CI build should be pushed to production. That can lead to hundreds of releases a week. Again, this
 will generally be augmented by using build pipelines that check software is working, as well as practices like blue-green releases for zero downtime deploys.
-^ The fact is that the peer-reviewed research in this space shows that teams that learn to do this delivery services faster and more reliably.
+^ The fact is that the peer-reviewed research in this space shows that teams that learn to do this deliver services faster and more reliably.
 
 ---
 
@@ -320,6 +328,17 @@ Avoid "It works on my machine"
 
 ^ This is worth calling out. If you have open ranges and a lock file, *always* use and commit the lock file. The number of "it works on my machine" arguments I've seen (particularly in JS spaces) that came down to poor lock file/dep management is pretty absurd. By commit time, we should have single-version!
 
+
+---
+
+# Recent Developments
+
+* Dependabot
+* Atomist
+
+
+^ There are also some nice tools in the CI Server space. Dependabot is a bot that has been acquired by Github (and is free to use) that will automatically generate PRs for updates. Not fully automated (and PR is the antithesis of CI) but if you're already using GH and PR, then it's a good step forward
+^ Atomist uses a really interesting paradigm for CI/CD. I won't go into it here, but if you're using Atomist as your deployment platform it has all sorts of nice tools to analyse, visualise, and upgrade your dependencies automatically.
 
 ---
 
@@ -558,5 +577,7 @@ Avoid "It works on my machine"
 # Thank You
 
 ## @garyfleming
+
+### #talk-continuousentrop -> selfconf.slack.com
 
 ![right](images/beautiful-fish.jpg)
