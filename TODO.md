@@ -2,6 +2,8 @@
 
 Personal Feedback
 
+* add https://blog.npmjs.org/post/185397814280/plot-to-steal-cryptocurrency-foiled-by-the-npm
+
 * Make it less polemic. Use positive messages: make things dull and cosy so you can get better value.
 * Consider cutting down the team stuff at the end
 * Nail the landing better. The fish thing doesn't really work at the end.
