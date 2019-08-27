@@ -1,5 +1,7 @@
 theme: Posterish
+footer: @garyfleming
 
+### Fighting Code Rot Using Continuous Improvement
 # 1995
 
 ^ The year is 1995. This is where our story begins. Since some of you may not remember 1995, let me tell you about it...
@@ -80,29 +82,17 @@ theme: Posterish
 
 ---
 
-## Fighting Continuous Entropy
-### Adventures in Continuous Delivery
+## Fight Code Rot Using Continuous Improvement
 ### @garyfleming
 
 ^ My name is... I am a...
-^ The talk is called Fighting Continuous Entropy. When I have a talk called something like that, I have to accept that some of the audience, maybe most of you, don't know what entropy is. So let's start with something not technical (in the software sense)
+^ The talk is called Fight Code Rot.. It's about what to do to stop your system falling apart without you noticign
 
 ---
 
-# What is Entropy?
+# What is Code Rot?
 
-> "a thermodynamic quantity representing the unavailability of a system's thermal energy for conversion into mechanical work, often interpreted as the degree of disorder or randomness in [a closed] system."
-
-^ I'm sure that has cleared that up.
-^ I'll try to explain but, if you're a physicist, you'll probably disagree. That's fine. I'm simplifying for the benefit of everyone else, which means I'm going to be a bit wrong.
-
----
-
-# What is Entropy?
-
-> "Disorder of a closed system"
-
-^ This is the important part, thought I suspect still a little abstract: More disorder means more possible states of a system. Entropy of the universe ONLY increases. Same of any closed system.
+^ I'll get into this more shorty but you need to understand a little bit about systems first.
 
 ---
 
@@ -121,13 +111,13 @@ theme: Posterish
 * 10 days?
 * 10000 years?
 
-^ time is a key component of understanding entropy in systems. We might know (to some degree) the state of a system at some point, but over time it will change. Consider our fish box at these time scales. 10 minutes? Probably much the same. 10 hours? Ice will be melting but fish might be fine. 10 days? Fish will be rotten. 10000 years? The box will have started to breakdown.
+^ time is a key component of understanding rot in systems. We might know (to some degree) the state of a system at some point, but over time it will change. Consider our fish box at these time scales. 10 minutes? Probably much the same. 10 hours? Ice will be melting but fish might be fine. 10 days? Fish will be rotten. 10000 years? The box will have started to breakdown.
 
 ---
 
-# Entropy in Software
+# Rot in Software
 
-^ So why have I been talking about entropy at all?
+^ So why have I been talking about rot at all?
 ^ You might think that you write your software and put it into production and it'll remain the same forever. That's sadly not true. Code rots. It's a fish in a box, and the ice is melting.
 ^ What can we do to keep it cooler longer?
 
@@ -135,7 +125,7 @@ theme: Posterish
 
 # 👨🏻‍🦳  
 
-^ Nigel's problem was a fairly extreme case of this, so let's think about some problems that show entropy that might involve your day to day.
+^ Nigel's problem was a fairly extreme case of this, so let's think about some problems that show rot that might involve your day to day.
 ^ Let's use how a modern team might work to reflect on the problem's of the past.
 
 ---
@@ -578,6 +568,5 @@ Avoid "It works on my machine"
 
 ## @garyfleming
 
-### #talk-continuousentrop -> selfconf.slack.com
 
 ![right](images/beautiful-fish.jpg)
