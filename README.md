@@ -4,7 +4,7 @@ Our software lives in an entropic state. The world changes around it: new bugs a
 
 We often adopt approaches to continuously deploy our systems, but what if we had tools that let us continuously upgrade them too; pushing the entropy back a little bit each day.
 
-Come along and learn about some advanced Continuos Integration/Delivery practices we can use to keep our systems continually fresh, continually rejuvenated. Let's use automation to explore how we keep our systems from rotting away, without pain.
+Come along and learn about some advanced Continuous Integration/Delivery practices we can use to keep our systems continually fresh, continually rejuvenated. Let's use automation to explore how we keep our systems from rotting away, without pain.
 
 ## Alternate history
 
@@ -61,4 +61,8 @@ We'd talk about enabling and governing constraints at an org level, but also mea
 
 ## History
 
-Nowhere yet. Haven't even submitted it anywhere.
+Badly need to update this. It's been to a bunch of conferences globally.
+
+## Recording
+
+* [Fighting Code Rot Using Continuous Improvement](https://youtu.be/-13bN6Dxbec) at Lean Agile Manchester?
